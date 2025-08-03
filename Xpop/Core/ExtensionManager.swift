@@ -539,7 +539,7 @@ enum BuiltInAction {
             Task {
                 let kbManager = KeyboardManager.shared
                 let winManager = AppDelegate.shared
-                winManager.hideWindow_new()
+                await winManager.hideWindow_new()
                 kbManager.simulateKeyPress(from: "command c")
             }
         },
@@ -547,7 +547,7 @@ enum BuiltInAction {
             Task {
                 let kbManager = KeyboardManager.shared
                 let winManager = AppDelegate.shared
-                winManager.hideWindow_new()
+                await winManager.hideWindow_new()
                 kbManager.simulateKeyPress(from: "command x")
             }
         },
@@ -555,7 +555,7 @@ enum BuiltInAction {
             Task {
                 let kbManager = KeyboardManager.shared
                 let winManager = AppDelegate.shared
-                winManager.hideWindow_new()
+                await winManager.hideWindow_new()
                 kbManager.simulateKeyPress(from: "command v")
             }
         },

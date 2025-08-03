@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00C8F3082E3F462D000C61F4 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = 00C8F3072E3F462D000C61F4 /* Yams */; };
 		FD8EDB902D37F77800BE2422 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FD8EDB8F2D37F76500BE2422 /* .swiftlint.yml */; };
 		FD8EDB932D37FA3C00BE2422 /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = FD8EDB922D37FA3100BE2422 /* .swiftformat */; };
 		FD8F63162D2E693700C632D7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FD8F630D2D2E693700C632D7 /* .gitignore */; };
 		FD8F631A2D2E693700C632D7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FD8F63132D2E693700C632D7 /* README.md */; };
-		FDCB7C8D2D45D84C005CCEC5 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = FDCB7C8C2D45D84C005CCEC5 /* Yams */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FD0DC1F62D2E18F300B1676A /* Xpop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xpop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD0DC1F62D2E18F300B1676A /* Xpop Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Xpop Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8EDB8F2D37F76500BE2422 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		FD8EDB922D37FA3100BE2422 /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
 		FD8F630D2D2E693700C632D7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDCB7C8D2D45D84C005CCEC5 /* Yams in Frameworks */,
+				00C8F3082E3F462D000C61F4 /* Yams in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +82,7 @@
 		FD0DC1F72D2E18F300B1676A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FD0DC1F62D2E18F300B1676A /* Xpop.app */,
+				FD0DC1F62D2E18F300B1676A /* Xpop Debug.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,10 +111,10 @@
 			);
 			name = Xpop;
 			packageProductDependencies = (
-				FDCB7C8C2D45D84C005CCEC5 /* Yams */,
+				00C8F3072E3F462D000C61F4 /* Yams */,
 			);
 			productName = Xpop;
-			productReference = FD0DC1F62D2E18F300B1676A /* Xpop.app */;
+			productReference = FD0DC1F62D2E18F300B1676A /* Xpop Debug.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -125,7 +125,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					FD0DC1F52D2E18F300B1676A = {
 						CreatedOnToolsVersion = 16.0;
@@ -142,7 +142,7 @@
 			mainGroup = FD0DC1ED2D2E18F300B1676A;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				FDCB7C8B2D45D84C005CCEC5 /* XCRemoteSwiftPackageReference "Yams" */,
+				00C8F3062E3F462D000C61F4 /* XCRemoteSwiftPackageReference "Yams" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FD0DC1F72D2E18F300B1676A /* Products */;
@@ -250,7 +250,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 83GCPC538F;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -313,7 +315,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 83GCPC538F;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -337,14 +341,15 @@
 		FD0DC2062D2E18F400B1676A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APP_BUNDLE_ID_SUFFIX = .debug;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Xpop/Xpop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Xpop/Preview Content\"";
-				DEVELOPMENT_TEAM = 83GCPC538F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -357,8 +362,8 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.openagi.Xpop;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.openagi.Xpop$(APP_BUNDLE_ID_SUFFIX)";
+				PRODUCT_NAME = "$(TARGET_NAME) Debug";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -367,14 +372,15 @@
 		FD0DC2072D2E18F400B1676A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APP_BUNDLE_ID_SUFFIX = "";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Xpop/Xpop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Xpop/Preview Content\"";
-				DEVELOPMENT_TEAM = 83GCPC538F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -387,7 +393,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.openagi.Xpop;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.openagi.Xpop$(APP_BUNDLE_ID_SUFFIX)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -418,20 +424,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FDCB7C8B2D45D84C005CCEC5 /* XCRemoteSwiftPackageReference "Yams" */ = {
+		00C8F3062E3F462D000C61F4 /* XCRemoteSwiftPackageReference "Yams" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jpsim/Yams.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.1.3;
+				minimumVersion = 6.0.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FDCB7C8C2D45D84C005CCEC5 /* Yams */ = {
+		00C8F3072E3F462D000C61F4 /* Yams */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FDCB7C8B2D45D84C005CCEC5 /* XCRemoteSwiftPackageReference "Yams" */;
+			package = 00C8F3062E3F462D000C61F4 /* XCRemoteSwiftPackageReference "Yams" */;
 			productName = Yams;
 		};
 /* End XCSwiftPackageProductDependency section */
