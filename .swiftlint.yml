@@ -31,6 +31,9 @@ opt_in_rules:
   # - no_magic_numbers
   # - force_unwrapping
 
+analyzer_rules:
+  - unused_import
+
 line_length:
   warning: 120
   ignores_comments: true

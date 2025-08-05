@@ -6,8 +6,6 @@
 //
 
 import AppKit
-import Cocoa
-import SwiftUI
 
 let app = NSApplication.shared
 let delegate = AppDelegate.shared
