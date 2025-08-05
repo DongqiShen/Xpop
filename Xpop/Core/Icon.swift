@@ -58,7 +58,7 @@ struct CustomImage: View {
     private var isPNGImage: Bool {
         iconString.contains(".png")
     }
-    
+
     private var isSVGImage: Bool {
         parsedModifiers["iconify"] != nil
     }
@@ -67,7 +67,7 @@ struct CustomImage: View {
         let components = iconString.components(separatedBy: " ")
         return components.first { $0.contains(".png") } ?? ""
     }
-    
+
     private var svgImageName: String {
         parsedModifiers["iconify"] ?? ""
     }
@@ -136,7 +136,7 @@ struct CustomImage: View {
             )
         }
     }
-    
+
     private func loadImage(imageName: String) -> Image {
         // 假设 loadImageFromFileSystem 函数可以处理 PNG 和 SVG 图像
         return Image(nsImage: loadImageFromFileSystem(imageName: imageName))
@@ -267,34 +267,34 @@ struct CustomImage: View {
             print("Invalid iconify value format: \(iconifyValue)")
             return nil
         }
-        
+
         let iconSetPrefix = components[0]
         let iconName = components[1]
-        
+
         // Iconify CDN URL
         let iconifyURLString = "https://api.iconify.design/\(iconSetPrefix)/\(iconName).svg"
         guard let iconifyURL = URL(string: iconifyURLString) else {
             print("Invalid URL: \(iconifyURLString)")
             return nil
         }
-        
+
         // 获取 Application Support 目录
         guard let appName = Bundle.main.infoDictionary?["CFBundleName"] as? String,
               let appSupportURL = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {
             print("Failed to get Application Support directory.")
             return nil
         }
-        
+
         // 构建完整的插件目录路径
         let extensionsDir = appSupportURL.appendingPathComponent("\(appName)/Extensions")
-        
+
         guard let pluginDirName = ExtensionManager.shared.getExtensionDir(name: extName) else {
             print("Failed to get plugin directory name for: \(extName)")
             return nil
         }
-        
+
         let pluginDir = extensionsDir.appendingPathComponent(pluginDirName)
-        
+
         // 确保插件目录存在
         do {
             try FileManager.default.createDirectory(at: pluginDir, withIntermediateDirectories: true, attributes: nil)
@@ -302,28 +302,28 @@ struct CustomImage: View {
             print("Failed to create plugin directory: \(error)")
             return nil
         }
-        
+
         // 图标文件路径
         let iconFileName = "\(iconSetPrefix)-\(iconName).svg"
         let iconFileURL = pluginDir.appendingPathComponent(iconFileName)
-        
+
         // 使用信号量等待下载完成
         let semaphore = DispatchSemaphore(value: 0)
-        var downloadedURL: URL? = nil
-        
-        let task = URLSession.shared.dataTask(with: iconifyURL) { data, response, error in
+        var downloadedURL: URL?
+
+        let task = URLSession.shared.dataTask(with: iconifyURL) { data, _, error in
             defer { semaphore.signal() }
-            
+
             if let error = error {
                 print("Failed to download icon: \(error)")
                 return
             }
-            
+
             guard let data = data else {
                 print("No data returned.")
                 return
             }
-            
+
             // 将下载的数据保存到文件
             do {
                 if FileManager.default.fileExists(atPath: iconFileURL.path) {
@@ -336,13 +336,13 @@ struct CustomImage: View {
                 print("Failed to save downloaded icon: \(error)")
             }
         }
-        
+
         task.resume()
         semaphore.wait()
-        
+
         return downloadedURL
     }
-    
+
 }
 
 extension String {
